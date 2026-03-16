@@ -1,42 +1,86 @@
 {% extends "base.html" %}
 
 {% block title %}
-<title>แบบฟอร์มบันทึกข้อมูลประชากร</title>
+<title>ลงทะเบียนประชากร - ICT12367</title>
 {% endblock %}
 
 {% block content %}
 <div class="container my-4">
     <div class="row justify-content-center">
         <div class="col-lg-6 col-md-8">
-            <div class="card border-0 shadow-lg rounded-4 overflow-hidden hover-lift">
-                <div class="card-header border-0 text-white p-4" style="background: linear-gradient(135deg, #198754, #20c997);">
-                    <div class="text-center">
-                        <i class="bi bi-person-lines-fill fs-1 mb-2"></i>
-                        <h3 class="mb-0 fw-bold">แบบฟอร์มบันทึกข้อมูลประชากร</h3>
-                        <p class="mb-0 text-white-50 small mt-1">กรุณากรอกข้อมูลให้ครบถ้วน</p>
+
+            <!-- Form Card -->
+            <div class="card border-0 shadow-lg rounded-4 overflow-hidden hover-lift" data-aos="fade-up">
+                <!-- Header Gradient -->
+                <div class="card-header border-0 text-white p-4 p-md-5 text-center" style="background: var(--primary-gradient);">
+                    <div class="mb-3">
+                        <div class="d-inline-flex align-items-center justify-content-center rounded-circle mb-3"
+                             style="width: 70px; height: 70px; background: rgba(255,255,255,0.2); backdrop-filter: blur(5px);">
+                            <i class="bi bi-person-plus-fill fs-2"></i>
+                        </div>
                     </div>
+                    <h3 class="mb-1 fw-bold">แบบฟอร์มบันทึกข้อมูลประชากร</h3>
+                    <p class="mb-0 small" style="opacity: 0.8;">กรุณากรอกข้อมูลให้ครบถ้วนเพื่อบันทึกลงระบบ</p>
                 </div>
 
+                <!-- Form Body -->
                 <div class="card-body p-4 p-md-5 bg-white">
                     <form method="post" action="/form/">
                         {% csrf_token %}
-                        <div class="mb-3">
-                            <label for="name" class="form-label">ชื่อประชากร</label>
-                            <input type="text" class="form-control" name="name" placeholder="กรุณากรอกชื่อ-นามสกุล">
+
+                        <!-- Name Field -->
+                        <div class="mb-4" data-aos="fade-up" data-aos-delay="100">
+                            <label for="name" class="form-label fw-medium text-dark">
+                                <i class="bi bi-person me-1" style="color: #667eea;"></i> ชื่อประชากร
+                            </label>
+                            <div class="input-group">
+                                <span class="input-group-text bg-white border-end-0">
+                                    <i class="bi bi-person-badge" style="color: #667eea;"></i>
+                                </span>
+                                <input type="text" class="form-control border-start-0 py-3"
+                                       name="name" placeholder="กรุณากรอกชื่อ-นามสกุล" required
+                                       style="font-size: 1rem;">
+                            </div>
                         </div>
 
-                        <div class="mb-3">
-                            <label for="age" class="form-label">อายุ</label>
-                            <input type="number" class="form-control" name="age" placeholder="กรอกข้อมูลอายุเป็นตัวเลข">
+                        <!-- Age Field -->
+                        <div class="mb-4" data-aos="fade-up" data-aos-delay="200">
+                            <label for="age" class="form-label fw-medium text-dark">
+                                <i class="bi bi-calendar-event me-1" style="color: #667eea;"></i> อายุ
+                            </label>
+                            <div class="input-group">
+                                <span class="input-group-text bg-white border-end-0">
+                                    <i class="bi bi-123" style="color: #667eea;"></i>
+                                </span>
+                                <input type="number" class="form-control border-start-0 py-3"
+                                       name="age" placeholder="กรอกข้อมูลอายุเป็นตัวเลข" required min="1" max="150"
+                                       style="font-size: 1rem;">
+                            </div>
                         </div>
 
-                        <div class="d-flex gap-2">
-                            <button type="submit" class="btn btn-success">ลงทะเบียน</button>
-                            <button type="reset" class="btn btn-danger">ล้างข้อมูล</button>
+                        <!-- Buttons -->
+                        <div class="d-flex gap-3 mt-5" data-aos="fade-up" data-aos-delay="300">
+                            <button type="submit" class="btn btn-lg flex-fill rounded-pill text-white fw-bold shadow"
+                                    style="background: var(--primary-gradient); padding: 12px;">
+                                <i class="bi bi-check2-circle me-1"></i> ลงทะเบียน
+                            </button>
+                            <button type="reset" class="btn btn-lg btn-outline-secondary rounded-pill px-4"
+                                    style="padding: 12px;">
+                                <i class="bi bi-arrow-counterclockwise me-1"></i> ล้าง
+                            </button>
                         </div>
                     </form>
                 </div>
             </div>
+
+            <!-- Quick Link -->
+            <div class="text-center mt-4" data-aos="fade-up" data-aos-delay="400">
+                <p class="text-muted">
+                    <i class="bi bi-arrow-left me-1"></i>
+                    กลับไป <a href="/" class="fw-bold text-decoration-none" style="color: #667eea;">ดูข้อมูลประชากร</a>
+                </p>
+            </div>
+
         </div>
     </div>
 </div>

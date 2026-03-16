@@ -1,33 +1,146 @@
 {% extends "base.html" %}
 
 {% block title %}
-<title>หน้าแรก - ข้อมูลประชากร</title>
+<title>หน้าแรก - ระบบข้อมูลประชากร ICT12367</title>
 {% endblock %}
 
 {% block content %}
 <div class="container">
-    <h2 style="color: blueviolet;">ยินดีต้อนรับเข้าสู่ประชากร</h2>
-    <table class="table table-hover">
-        <thead>
-            <tr>
-                <th scope="col">รหัสประชากร</th>
-                <th scope="col">ชื่อประชากร</th>
-                <th scope="col">อายุ</th>
-                <th scope="col">แก้ไข</th>
-                <th scope="col">ลบ</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for person in all_person %}
-            <tr>
-                <th scope="row">{{person.id}}</th>
-                <td>{{person.name}}</td>
-                <td>{{person.age}}</td>
-                <td class="text-center"><a href="#" class="btn" style="background-color: pink; color: white;">แก้ไข</a></td>
-                <td class="text-center"><a href="#" class="btn" style="background-color: orange; color: white;">ลบ</a></td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
+
+    <!-- Welcome Section -->
+    <div class="text-center mb-5" data-aos="fade-up">
+        <span class="badge rounded-pill px-4 py-2 mb-3" style="background: var(--primary-gradient); font-size: 0.9rem;">
+            <i class="bi bi-database me-1"></i> ระบบจัดการข้อมูล
+        </span>
+        <h2 class="fw-bold text-dark mb-2">ยินดีต้อนรับเข้าสู่ระบบข้อมูลประชากร</h2>
+        <p class="text-muted fs-5">รายวิชา ICT12367 การใช้กรอบงานสำหรับการพัฒนาเว็บแอปพลิเคชันเพื่อความมั่นคงปลอดภัย</p>
+    </div>
+
+    <!-- Stats Cards -->
+    <div class="row g-4 mb-5" data-aos="fade-up" data-aos-delay="100">
+        <div class="col-md-4">
+            <div class="stat-card hover-lift">
+                <div class="stat-icon" style="background: linear-gradient(135deg, #667eea20, #764ba220);">
+                    <i class="bi bi-people-fill" style="color: #667eea;"></i>
+                </div>
+                <h3 class="fw-bold mb-1" style="color: #667eea;">
+                    {% if all_person %}{{ all_person|length }}{% else %}0{% endif %}
+                </h3>
+                <p class="text-muted mb-0 small">จำนวนประชากรทั้งหมด</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="stat-card hover-lift">
+                <div class="stat-icon" style="background: linear-gradient(135deg, #f093fb20, #f5576c20);">
+                    <i class="bi bi-clipboard2-data" style="color: #f5576c;"></i>
+                </div>
+                <h3 class="fw-bold mb-1" style="color: #f5576c;">5</h3>
+                <p class="text-muted mb-0 small">คอลัมน์ข้อมูล</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="stat-card hover-lift">
+                <div class="stat-icon" style="background: linear-gradient(135deg, #11998e20, #38ef7d20);">
+                    <i class="bi bi-shield-check" style="color: #11998e;"></i>
+                </div>
+                <h3 class="fw-bold mb-1" style="color: #11998e;">Active</h3>
+                <p class="text-muted mb-0 small">สถานะระบบ</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Data Table Section -->
+    <div class="card border-0 shadow-lg rounded-4 overflow-hidden" data-aos="fade-up" data-aos-delay="200">
+        <!-- Card Header -->
+        <div class="card-header border-0 p-4" style="background: var(--primary-gradient);">
+            <div class="d-flex justify-content-between align-items-center">
+                <div class="text-white">
+                    <h5 class="mb-1 fw-bold"><i class="bi bi-table me-2"></i>ตารางข้อมูลประชากร</h5>
+                    <p class="mb-0 small" style="opacity: 0.8;">รายชื่อประชากรทั้งหมดในระบบ</p>
+                </div>
+                <a href="/form" class="btn btn-light btn-sm rounded-pill px-3 fw-bold shadow-sm">
+                    <i class="bi bi-plus-circle me-1"></i> เพิ่มข้อมูล
+                </a>
+            </div>
+        </div>
+
+        <!-- Table -->
+        <div class="card-body p-0">
+            <div class="table-responsive">
+                <table class="table table-hover table-custom align-middle mb-0">
+                    <thead>
+                        <tr>
+                            <th class="text-center" style="width: 80px;">
+                                <i class="bi bi-hash me-1"></i>รหัส
+                            </th>
+                            <th><i class="bi bi-person me-1"></i>ชื่อประชากร</th>
+                            <th class="text-center"><i class="bi bi-calendar-event me-1"></i>อายุ</th>
+                            <th class="text-center" style="width: 120px;">แก้ไข</th>
+                            <th class="text-center" style="width: 120px;">ลบ</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for person in all_person %}
+                        <tr>
+                            <th scope="row" class="text-center fw-bold" style="color: #667eea;">{{ person.id }}</th>
+                            <td>
+                                <div class="d-flex align-items-center">
+                                    <div class="rounded-circle d-flex align-items-center justify-content-center me-3"
+                                         style="width: 38px; height: 38px; background: linear-gradient(135deg, #667eea20, #764ba220);">
+                                        <i class="bi bi-person-fill" style="color: #667eea;"></i>
+                                    </div>
+                                    <span class="fw-medium">{{ person.name }}</span>
+                                </div>
+                            </td>
+                            <td class="text-center">
+                                <span class="badge rounded-pill px-3 py-2" style="background: rgba(102,126,234,0.1); color: #667eea; font-size: 0.85rem;">
+                                    {{ person.age }} ปี
+                                </span>
+                            </td>
+                            <td class="text-center">
+                                <a href="#" class="btn btn-edit btn-sm">
+                                    <i class="bi bi-pencil-square me-1"></i>แก้ไข
+                                </a>
+                            </td>
+                            <td class="text-center">
+                                <a href="#" class="btn btn-delete btn-sm">
+                                    <i class="bi bi-trash3 me-1"></i>ลบ
+                                </a>
+                            </td>
+                        </tr>
+                        {% empty %}
+                        <tr>
+                            <td colspan="5" class="text-center py-5">
+                                <div class="py-4">
+                                    <i class="bi bi-inbox fs-1 text-muted"></i>
+                                    <p class="text-muted mt-3 mb-2 fw-medium">ยังไม่มีข้อมูลประชากรในระบบ</p>
+                                    <a href="/form" class="btn btn-sm rounded-pill px-4 text-white" style="background: var(--primary-gradient);">
+                                        <i class="bi bi-plus-circle me-1"></i> เพิ่มข้อมูลคนแรก
+                                    </a>
+                                </div>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        {% if all_person %}
+        <!-- Card Footer -->
+        <div class="card-footer bg-white border-top-0 p-3">
+            <div class="d-flex justify-content-between align-items-center px-2">
+                <span class="text-muted small">
+                    <i class="bi bi-info-circle me-1"></i>
+                    แสดงข้อมูลทั้งหมด {{ all_person|length }} รายการ
+                </span>
+                <span class="text-muted small">
+                    <i class="bi bi-clock me-1"></i> อัพเดทล่าสุด: วันนี้
+                </span>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+
 </div>
 {% endblock %}
