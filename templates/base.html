@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <!-- Google Fonts: Prompt -->
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    {% block title %}
+    <title>ระบบข้อมูลประกันสังคม - ICT12367</title>
+    {% endblock %}
+
+    <style>
+        /* ตั้งค่าฟอนต์หลัก */
+        body {
+            font-family: 'Prompt', sans-serif;
+            background-color: #f4f7f6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* ตกแต่ง Navbar */
+        .navbar-custom {
+            background: linear-gradient(135deg, #0d6efd, #0a58ca);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        .navbar-custom .nav-link {
+            color: rgba(255,255,255,0.85);
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        .navbar-custom .nav-link:hover, .navbar-custom .nav-link.active {
+            color: #ffffff;
+            transform: translateY(-2px);
+        }
+
+        /* ตกแต่ง Carousel (แบนเนอร์) */
+        .carousel-img {
+            height: 400px;
+            object-fit: cover;
+            filter: brightness(0.7); /* ทำให้ภาพมืดลงนิดหน่อยเพื่อให้ตัวหนังสือเด่น */
+        }
+        .carousel-caption {
+            bottom: 40px;
+        }
+        .carousel-caption h5 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        /* เอฟเฟกต์การ์ดแบบลอยตัว */
+        .hover-lift {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .hover-lift:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15) !important;
+        }
+
+        /* จัด Footer ให้อยู่ล่างสุดเสมอ */
+        main {
+            flex: 1;
+        }
+
+        /* ตกแต่ง Footer */
+        .footer-custom {
+            background-color: #212529;
+            color: #adb5bd;
+            padding: 40px 0 20px;
+            margin-top: auto;
+        }
+        .footer-custom a {
+            color: #adb5bd;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .footer-custom a:hover {
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom sticky-top py-3">
+        <div class="container">
+            <a class="navbar-brand fw-bold fs-4" href="/">
+                <i class="bi bi-shield-check text-warning me-2"></i>ICT12367 SPU
+            </a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto gap-3">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/"><i class="bi bi-house-door me-1"></i> หน้าแรก</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/about"><i class="bi bi-info-circle me-1"></i> เกี่ยวกับเรา</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-warning text-dark px-4 rounded-pill fw-bold" href="/form">
+                            <i class="bi bi-person-plus-fill me-1"></i> ลงทะเบียน
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Banner Carousel -->
+    <div id="bannerCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#bannerCarousel" data-bs-slide-to="0" class="active"></button>
+            <button type="button" data-bs-target="#bannerCarousel" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#bannerCarousel" data-bs-slide-to="2"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active" data-bs-interval="4000">
+                <img src="https://picsum.photos/id/1015/1200/500" class="d-block w-100 carousel-img" alt="banner1">
+                <div class="carousel-caption d-none d-md-block pb-5">
+                    <h5 class="display-4 fw-bold">ยินดีต้อนรับสู่ ICT12367</h5>
+                    <p class="fs-5">การใช้กรอบงานสำหรับการพัฒนาเว็บแอปพลิเคชัน</p>
+                </div>
+            </div>
+            <div class="carousel-item" data-bs-interval="4000">
+                <img src="https://picsum.photos/id/1016/1200/500" class="d-block w-100 carousel-img" alt="banner2">
+                <div class="carousel-caption d-none d-md-block pb-5">
+                    <h5 class="display-4 fw-bold">บริการที่ครบครัน</h5>
+                    <p class="fs-5">ตอบโจทย์ทุกความต้องการของประชากร</p>
+                </div>
+            </div>
+            <div class="carousel-item" data-bs-interval="4000">
+                <img src="https://picsum.photos/id/1018/1200/500" class="d-block w-100 carousel-img" alt="banner3">
+                <div class="carousel-caption d-none d-md-block pb-5">
+                    <h5 class="display-4 fw-bold">ติดต่อเราได้ง่าย</h5>
+                    <p class="fs-5">ทีมงานพร้อมให้บริการตลอดเวลา 24 ชั่วโมง</p>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#bannerCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#bannerCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
+    </div>
+  
+    <!-- Content Area (พื้นที่ให้หน้าอื่นมาแทรก) -->
+    <main class="py-5">
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <!-- Footer แบบมืออาชีพ -->
+<footer class="footer-custom">
+    <div class="container">
+        <div class="row gy-4">
+            <div class="col-lg-5 col-md-12 text-center text-lg-start">
+                <h5 class="text-white fw-bold mb-3">
+                    <i class="bi bi-shield-check text-warning me-2"></i>ICT12367 SPU
+                </h5>
+                <p>
+                    เว็บไซต์นี้เป็นส่วนหนึ่งของวิชาการใช้กรอบงานสำหรับการพัฒนาเว็บแอปพลิเคชัน 
+                    เพื่อความมั่นคงปลอดภัย มหาวิทยาลัยศรีปทุม
+                </p>
+            </div>
+
+            <div class="col-lg-4 col-md-6 text-center text-lg-start">
+                <h5 class="text-white fw-bold mb-3">เมนูหลัก</h5>
+                <ul class="list-unstyled">
+                    <li class="mb-2">
+                        <a href="/"><i class="bi bi-chevron-right me-1 small"></i>หน้าแรก</a>
+                    </li>
+                    <li class="mb-2">
+                        <a href="/about"><i class="bi bi-chevron-right me-1 small"></i>เกี่ยวกับเรา</a>
+                    </li>
+                    <li class="mb-2">
+                        <a href="/form"><i class="bi bi-chevron-right me-1 small"></i>ลงทะเบียนประชากร</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col-lg-3 col-md-6 text-center text-lg-start">
+                <h5 class="text-white fw-bold mb-3">ช่องทางติดต่อ</h5>
+                <div class="d-flex justify-content-center justify-content-lg-start gap-3 mt-3">
+                    <a href="#" class="fs-4"><i class="bi bi-facebook"></i></a>
+                    <a href="#" class="fs-4"><i class="bi bi-line"></i></a>
+                    <a href="#" class="fs-4"><i class="bi bi-envelope"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <hr class="mt-4 mb-3 border-secondary">
+
+        <div class="text-center small">
+            &copy; 2024 ICT12367 SPU | Information Technology. All Rights Reserved.
+            <div class="mt-1">
+                ผู้พัฒนา: <strong>ชินภัทร บุญยศ</strong> รหัสนักศึกษา 68103144
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

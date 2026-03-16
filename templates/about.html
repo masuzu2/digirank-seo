@@ -1,0 +1,117 @@
+{% extends "base.html" %}
+
+{% block title %}
+<title>เกี่ยวกับเรา - แกลอรีข้อมูลประกันสังคม</title>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <!-- Header Section -->
+    <div class="row justify-content-center mb-5">
+        <div class="col-md-8 text-center">
+            <span class="badge bg-primary px-3 py-2 rounded-pill mb-3">About Information</span>
+            <h2 class="fw-bold mb-3 text-dark">แกลอรีข้อมูลประกันสังคม</h2>
+            <p class="text-muted">รวมข้อมูลสิทธิประโยชน์ที่สำคัญสำหรับผู้ประกันตน เพื่อให้คุณเข้าใจและเข้าถึงสิทธิของคุณได้อย่างเต็มที่</p>
+        </div>
+    </div>
+
+    <!-- Gallery Grid -->
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+        <!-- Card 1 -->
+        <div class="col">
+            <div class="card h-100 shadow-sm border-0 rounded-4 hover-lift overflow-hidden">
+                <img src="https://picsum.photos/600/400?random=10" class="card-img-top gallery-img" alt="สิทธิรักษาพยาบาล">
+                <div class="card-body p-4">
+                    <div class="d-flex align-items-center mb-3">
+                        <div class="bg-primary text-white rounded-circle p-2 me-3 d-flex justify-content-center align-items-center" style="width: 45px; height: 45px;">
+                            <i class="bi bi-hospital fs-5"></i>
+                        </div>
+                        <h5 class="card-title fw-bold mb-0">สิทธิการรักษาพยาบาล</h5>
+                    </div>
+                    <p class="card-text text-secondary">ผู้ประกันตนสามารถเข้ารับบริการในโรงพยาบาลที่เลือกไว้โดยไม่เสียค่าใช้จ่ายตามสิทธิที่กำหนดไว้.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Card 2 -->
+        <div class="col">
+            <div class="card h-100 shadow-sm border-0 rounded-4 hover-lift overflow-hidden">
+                <img src="https://picsum.photos/600/400?random=11" class="card-img-top gallery-img" alt="สิทธิคลอดบุตร">
+                <div class="card-body p-4">
+                    <div class="d-flex align-items-center mb-3">
+                        <div class="bg-pink text-white rounded-circle p-2 me-3 d-flex justify-content-center align-items-center" style="width: 45px; height: 45px; background-color: #d63384;">
+                            <i class="bi bi-person-hearts fs-5"></i>
+                        </div>
+                        <h5 class="card-title fw-bold mb-0">สิทธิกรณีคลอดบุตร</h5>
+                    </div>
+                    <p class="card-text text-secondary">รับค่าทำคลอดและเงินสงเคราะห์การหยุดงานเพื่อการคลอดบุตร ช่วยแบ่งเบาภาระครอบครัว.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="col">
+            <div class="card h-100 shadow-sm border-0 rounded-4 hover-lift overflow-hidden">
+                <img src="https://picsum.photos/600/400?random=12" class="card-img-top gallery-img" alt="ชราภาพ">
+                <div class="card-body p-4">
+                    <div class="d-flex align-items-center mb-3">
+                        <div class="bg-warning text-dark rounded-circle p-2 me-3 d-flex justify-content-center align-items-center" style="width: 45px; height: 45px;">
+                            <i class="bi bi-piggy-bank fs-5"></i>
+                        </div>
+                        <h5 class="card-title fw-bold mb-0">สิทธิกรณีชราภาพ</h5>
+                    </div>
+                    <p class="card-text text-secondary">สร้างหลักประกันในวัยเกษียณ ผู้ประกันตนจะได้รับเงินบำนาญหรือเงินก้อนตามเงื่อนไขที่กำหนด.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="col">
+            <div class="card h-100 shadow-sm border-0 rounded-4 hover-lift overflow-hidden">
+                <img src="https://picsum.photos/600/400?random=13" class="card-img-top gallery-img" alt="ทุพพลภาพ">
+                <div class="card-body p-4">
+                    <div class="d-flex align-items-center mb-3">
+                        <div class="bg-info text-dark rounded-circle p-2 me-3 d-flex justify-content-center align-items-center" style="width: 45px; height: 45px;">
+                            <i class="bi bi-bandaid fs-5"></i>
+                        </div>
+                        <h5 class="card-title fw-bold mb-0">สิทธิกรณีทุพพลภาพ</h5>
+                    </div>
+                    <p class="card-text text-secondary">ได้รับเงินทดแทนและสิทธิการรักษาพยาบาลกรณีไม่สามารถทำงานได้ตามปกติ คุ้มครองตลอดชีวิต.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="col">
+            <div class="card h-100 shadow-sm border-0 rounded-4 hover-lift overflow-hidden">
+                <img src="https://picsum.photos/600/400?random=14" class="card-img-top gallery-img" alt="เสียชีวิต">
+                <div class="card-body p-4">
+                    <div class="d-flex align-items-center mb-3">
+                        <div class="bg-secondary text-white rounded-circle p-2 me-3 d-flex justify-content-center align-items-center" style="width: 45px; height: 45px;">
+                            <i class="bi bi-flower1 fs-5"></i>
+                        </div>
+                        <h5 class="card-title fw-bold mb-0">กรณีเสียชีวิต</h5>
+                    </div>
+                    <p class="card-text text-secondary">ครอบครัวผู้ประกันตนจะได้รับเงินค่าทำศพและเงินช่วยเหลือจากประกันสังคม บรรเทาความเดือดร้อน.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="col">
+            <div class="card h-100 shadow-sm border-0 rounded-4 hover-lift overflow-hidden">
+                <img src="https://picsum.photos/600/400?random=15" class="card-img-top gallery-img" alt="ว่างงาน">
+                <div class="card-body p-4">
+                    <div class="d-flex align-items-center mb-3">
+                        <div class="bg-success text-white rounded-circle p-2 me-3 d-flex justify-content-center align-items-center" style="width: 45px; height: 45px;">
+                            <i class="bi bi-briefcase fs-5"></i>
+                        </div>
+                        <h5 class="card-title fw-bold mb-0">สิทธิกรณีว่างงาน</h5>
+                    </div>
+                    <p class="card-text text-secondary">รับเงินชดเชยระหว่างตกงาน เลิกจ้าง หรือลาออก เพื่อเป็นทุนสำรองระหว่างหางานใหม่.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
