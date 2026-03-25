@@ -1,0 +1,95 @@
+{% extends "base.html" %}
+
+{% block title %}
+<title>แก้ไขข้อมูล - {{ person.name }} | ICT12367</title>
+{% endblock %}
+
+{% block content %}
+<div class="container my-4">
+    <div class="row justify-content-center">
+        <div class="col-lg-6 col-md-8">
+
+            <!-- Edit Form Card -->
+            <div class="card border-0 shadow-lg rounded-4 overflow-hidden hover-lift" data-aos="fade-up">
+                <!-- Header Gradient -->
+                <div class="card-header border-0 text-white p-4 p-md-5 text-center" style="background: linear-gradient(135deg, #e91e8c, #c4177a);">
+                    <div class="mb-3">
+                        <div class="d-inline-flex align-items-center justify-content-center rounded-circle mb-3"
+                             style="width: 70px; height: 70px; background: rgba(255,255,255,0.2); backdrop-filter: blur(5px);">
+                            <i class="bi bi-pencil-square fs-2"></i>
+                        </div>
+                    </div>
+                    <h3 class="mb-1 fw-bold">แก้ไขข้อมูลประชากร</h3>
+                    <p class="mb-0 small" style="opacity: 0.8;">แก้ไขข้อมูลของ {{ person.name }} (รหัส #{{ person.id }})</p>
+                </div>
+
+                <!-- Form Body -->
+                <div class="card-body p-4 p-md-5 bg-white">
+                    <form method="post" action="/edit/{{ person.id }}/">
+                        {% csrf_token %}
+
+                        <!-- Name Field -->
+                        <div class="mb-4" data-aos="fade-up" data-aos-delay="100">
+                            <label for="name" class="form-label fw-medium text-dark">
+                                <i class="bi bi-person me-1" style="color: #e91e8c;"></i> ชื่อประชากร
+                            </label>
+                            <div class="input-group">
+                                <span class="input-group-text bg-white border-end-0">
+                                    <i class="bi bi-person-badge" style="color: #e91e8c;"></i>
+                                </span>
+                                <input type="text" class="form-control border-start-0 py-3"
+                                       name="name" value="{{ person.name }}" required
+                                       style="font-size: 1rem;">
+                            </div>
+                        </div>
+
+                        <!-- Age Field -->
+                        <div class="mb-4" data-aos="fade-up" data-aos-delay="200">
+                            <label for="age" class="form-label fw-medium text-dark">
+                                <i class="bi bi-calendar-event me-1" style="color: #e91e8c;"></i> อายุ
+                            </label>
+                            <div class="input-group">
+                                <span class="input-group-text bg-white border-end-0">
+                                    <i class="bi bi-123" style="color: #e91e8c;"></i>
+                                </span>
+                                <input type="number" class="form-control border-start-0 py-3"
+                                       name="age" value="{{ person.age }}" required min="1" max="150"
+                                       style="font-size: 1rem;">
+                            </div>
+                        </div>
+
+                        <!-- Info -->
+                        <div class="alert rounded-3 border-0 mb-4 p-3" style="background: rgba(17,153,142,0.08);" data-aos="fade-up" data-aos-delay="250">
+                            <div class="d-flex align-items-center">
+                                <i class="bi bi-calendar3 me-2" style="color: #11998e;"></i>
+                                <span class="small text-muted">วันที่เพิ่มข้อมูล: <strong>{{ person.date }}</strong></span>
+                            </div>
+                        </div>
+
+                        <!-- Buttons -->
+                        <div class="d-flex gap-3 mt-5" data-aos="fade-up" data-aos-delay="300">
+                            <button type="submit" class="btn btn-lg flex-fill rounded-pill text-white fw-bold shadow"
+                                    style="background: linear-gradient(135deg, #e91e8c, #c4177a); padding: 12px;">
+                                <i class="bi bi-check2-circle me-1"></i> บันทึกการแก้ไข
+                            </button>
+                            <a href="/" class="btn btn-lg btn-outline-secondary rounded-pill px-4"
+                               style="padding: 12px;">
+                                <i class="bi bi-x-circle me-1"></i> ยกเลิก
+                            </a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Quick Link -->
+            <div class="text-center mt-4" data-aos="fade-up" data-aos-delay="400">
+                <p class="text-muted">
+                    <i class="bi bi-arrow-left me-1"></i>
+                    กลับไป <a href="/" class="fw-bold text-decoration-none" style="color: #667eea;">ดูข้อมูลประชากร</a>
+                </p>
+            </div>
+
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,146 +1,276 @@
 {% extends "base.html" %}
 
 {% block title %}
-<title>หน้าแรก - ระบบข้อมูลประชากร ICT12367</title>
+<title>DigiRank SEO - บริษัทรับทำ SEO ครบวงจร | ติดหน้าแรก Google</title>
 {% endblock %}
 
 {% block content %}
-<div class="container">
 
-    <!-- Welcome Section -->
-    <div class="text-center mb-5" data-aos="fade-up">
-        <span class="badge rounded-pill px-4 py-2 mb-3" style="background: var(--primary-gradient); font-size: 0.9rem;">
-            <i class="bi bi-database me-1"></i> ระบบจัดการข้อมูล
-        </span>
-        <h2 class="fw-bold text-dark mb-2">ยินดีต้อนรับเข้าสู่ระบบข้อมูลประชากร</h2>
-        <p class="text-muted fs-5">รายวิชา ICT12367 การใช้กรอบงานสำหรับการพัฒนาเว็บแอปพลิเคชันเพื่อความมั่นคงปลอดภัย</p>
+<!-- Hero Section -->
+<section style="background: var(--gradient-hero); padding: 100px 0 80px; position: relative; overflow: hidden;">
+    <!-- Animated Background -->
+    <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; overflow: hidden; pointer-events: none;">
+        <div style="position: absolute; top: 10%; left: 5%; width: 300px; height: 300px; background: rgba(59,130,246,0.08); border-radius: 50%; filter: blur(80px);"></div>
+        <div style="position: absolute; bottom: 10%; right: 10%; width: 400px; height: 400px; background: rgba(6,182,212,0.06); border-radius: 50%; filter: blur(100px);"></div>
+        <div style="position: absolute; top: 30%; right: 30%; width: 200px; height: 200px; background: rgba(249,115,22,0.05); border-radius: 50%; filter: blur(60px);"></div>
     </div>
 
-    <!-- Stats Cards -->
-    <div class="row g-4 mb-5" data-aos="fade-up" data-aos-delay="100">
-        <div class="col-md-4">
-            <div class="stat-card hover-lift">
-                <div class="stat-icon" style="background: linear-gradient(135deg, #667eea20, #764ba220);">
-                    <i class="bi bi-people-fill" style="color: #667eea;"></i>
+    <div class="container position-relative">
+        <div class="row align-items-center">
+            <div class="col-lg-7" data-aos="fade-right">
+                <span class="section-badge mb-3">
+                    <i class="bi bi-stars me-1"></i> #1 SEO Agency in Thailand
+                </span>
+                <h1 class="display-3 fw-900 text-white mb-4" style="line-height: 1.1;">
+                    พาธุรกิจคุณ<br>
+                    <span class="gradient-text">ติดหน้าแรก</span><br>
+                    <span style="color: #f97316;">Google</span>
+                </h1>
+                <p class="fs-5 mb-4" style="color: var(--text-light); line-height: 1.8; max-width: 550px;">
+                    บริการ SEO ครบวงจรด้วยทีมผู้เชี่ยวชาญ วิเคราะห์ วางแผน
+                    และดำเนินการอย่างเป็นระบบ เพิ่มยอดขายจากการค้นหาอย่างยั่งยืน
+                </p>
+                <div class="d-flex gap-3 flex-wrap">
+                    <a href="/clients/add/" class="btn btn-accent-gradient btn-lg px-5">
+                        <i class="bi bi-rocket-takeoff me-2"></i>เริ่มต้นเลย
+                    </a>
+                    <a href="/services/" class="btn btn-outline-light btn-lg px-4 rounded-pill">
+                        <i class="bi bi-play-circle me-2"></i>ดูบริการ
+                    </a>
                 </div>
-                <h3 class="fw-bold mb-1" style="color: #667eea;">
-                    {% if all_person %}{{ all_person|length }}{% else %}0{% endif %}
-                </h3>
-                <p class="text-muted mb-0 small">จำนวนประชากรทั้งหมด</p>
+                <!-- Trust Badges -->
+                <div class="d-flex gap-4 mt-5 flex-wrap">
+                    <div class="text-center">
+                        <h3 class="fw-bold mb-0" style="color: #3b82f6;">500+</h3>
+                        <small style="color: var(--text-light);">โปรเจค</small>
+                    </div>
+                    <div style="width: 1px; background: rgba(255,255,255,0.1);"></div>
+                    <div class="text-center">
+                        <h3 class="fw-bold mb-0" style="color: #06b6d4;">98%</h3>
+                        <small style="color: var(--text-light);">ลูกค้าพอใจ</small>
+                    </div>
+                    <div style="width: 1px; background: rgba(255,255,255,0.1);"></div>
+                    <div class="text-center">
+                        <h3 class="fw-bold mb-0" style="color: #f97316;">10+</h3>
+                        <small style="color: var(--text-light);">ปีประสบการณ์</small>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="col-md-4">
-            <div class="stat-card hover-lift">
-                <div class="stat-icon" style="background: linear-gradient(135deg, #f093fb20, #f5576c20);">
-                    <i class="bi bi-clipboard2-data" style="color: #f5576c;"></i>
+            <div class="col-lg-5 d-none d-lg-block" data-aos="fade-left">
+                <div class="text-center">
+                    <div class="p-4 rounded-4 position-relative" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06);">
+                        <!-- Mock Dashboard -->
+                        <div class="p-3 rounded-3 mb-3" style="background: rgba(59,130,246,0.1); border: 1px solid rgba(59,130,246,0.15);">
+                            <div class="d-flex align-items-center mb-2">
+                                <i class="bi bi-graph-up-arrow me-2" style="color: #3b82f6; font-size: 1.5rem;"></i>
+                                <span class="fw-bold text-white">Organic Traffic</span>
+                            </div>
+                            <h2 class="fw-bold mb-0" style="color: #10b981;">+247%</h2>
+                            <small style="color: var(--text-light);">เทียบกับเดือนก่อน</small>
+                        </div>
+                        <div class="row g-2">
+                            <div class="col-6">
+                                <div class="p-3 rounded-3" style="background: rgba(6,182,212,0.1); border: 1px solid rgba(6,182,212,0.15);">
+                                    <i class="bi bi-search" style="color: #06b6d4;"></i>
+                                    <div class="fw-bold text-white mt-1">#1</div>
+                                    <small style="color: var(--text-light); font-size: 0.75rem;">Keyword Rank</small>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="p-3 rounded-3" style="background: rgba(249,115,22,0.1); border: 1px solid rgba(249,115,22,0.15);">
+                                    <i class="bi bi-cursor-fill" style="color: #f97316;"></i>
+                                    <div class="fw-bold text-white mt-1">15.2K</div>
+                                    <small style="color: var(--text-light); font-size: 0.75rem;">Monthly Clicks</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <h3 class="fw-bold mb-1" style="color: #f5576c;">5</h3>
-                <p class="text-muted mb-0 small">คอลัมน์ข้อมูล</p>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="stat-card hover-lift">
-                <div class="stat-icon" style="background: linear-gradient(135deg, #11998e20, #38ef7d20);">
-                    <i class="bi bi-shield-check" style="color: #11998e;"></i>
-                </div>
-                <h3 class="fw-bold mb-1" style="color: #11998e;">Active</h3>
-                <p class="text-muted mb-0 small">สถานะระบบ</p>
             </div>
         </div>
     </div>
+</section>
 
-    <!-- Data Table Section -->
-    <div class="card border-0 shadow-lg rounded-4 overflow-hidden" data-aos="fade-up" data-aos-delay="200">
-        <!-- Card Header -->
-        <div class="card-header border-0 p-4" style="background: var(--primary-gradient);">
-            <div class="d-flex justify-content-between align-items-center">
-                <div class="text-white">
-                    <h5 class="mb-1 fw-bold"><i class="bi bi-table me-2"></i>ตารางข้อมูลประชากร</h5>
-                    <p class="mb-0 small" style="opacity: 0.8;">รายชื่อประชากรทั้งหมดในระบบ</p>
+<!-- Dashboard Stats -->
+<section class="py-5" style="margin-top: -40px; position: relative; z-index: 10;">
+    <div class="container">
+        <div class="row g-4" data-aos="fade-up">
+            <div class="col-lg-3 col-md-6">
+                <div class="stat-card-seo hover-lift text-center shadow-sm">
+                    <div class="d-inline-flex align-items-center justify-content-center rounded-3 mb-3"
+                         style="width: 56px; height: 56px; background: rgba(59,130,246,0.1);">
+                        <i class="bi bi-people-fill fs-4" style="color: #3b82f6;"></i>
+                    </div>
+                    <h3 class="fw-bold mb-1" style="color: var(--dark);">{{ total_clients }}</h3>
+                    <p class="text-muted mb-0 small">ลูกค้าทั้งหมด</p>
                 </div>
-                <a href="/form" class="btn btn-light btn-sm rounded-pill px-3 fw-bold shadow-sm">
-                    <i class="bi bi-plus-circle me-1"></i> เพิ่มข้อมูล
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="stat-card-seo hover-lift text-center shadow-sm">
+                    <div class="d-inline-flex align-items-center justify-content-center rounded-3 mb-3"
+                         style="width: 56px; height: 56px; background: rgba(16,185,129,0.1);">
+                        <i class="bi bi-lightning-charge-fill fs-4" style="color: #10b981;"></i>
+                    </div>
+                    <h3 class="fw-bold mb-1" style="color: var(--dark);">{{ active_clients }}</h3>
+                    <p class="text-muted mb-0 small">กำลังดำเนินการ</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="stat-card-seo hover-lift text-center shadow-sm">
+                    <div class="d-inline-flex align-items-center justify-content-center rounded-3 mb-3"
+                         style="width: 56px; height: 56px; background: rgba(6,182,212,0.1);">
+                        <i class="bi bi-check-circle-fill fs-4" style="color: #06b6d4;"></i>
+                    </div>
+                    <h3 class="fw-bold mb-1" style="color: var(--dark);">{{ completed_projects }}</h3>
+                    <p class="text-muted mb-0 small">โปรเจคสำเร็จ</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="stat-card-seo hover-lift text-center shadow-sm">
+                    <div class="d-inline-flex align-items-center justify-content-center rounded-3 mb-3"
+                         style="width: 56px; height: 56px; background: rgba(249,115,22,0.1);">
+                        <i class="bi bi-currency-dollar fs-4" style="color: #f97316;"></i>
+                    </div>
+                    <h3 class="fw-bold mb-1" style="color: var(--dark);">{{ total_revenue|floatformat:0 }}</h3>
+                    <p class="text-muted mb-0 small">รายได้รวม (บาท)</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Services Preview -->
+<section class="py-5">
+    <div class="container">
+        <div class="text-center mb-5" data-aos="fade-up">
+            <span class="section-badge mb-3"><i class="bi bi-gear me-1"></i> Our Services</span>
+            <h2 class="fw-bold mt-3 mb-2" style="color: var(--dark);">บริการ SEO ครบวงจร</h2>
+            <p class="text-muted fs-5">ครอบคลุมทุกมิติของ Search Engine Optimization</p>
+        </div>
+        <div class="row g-4">
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                <div class="card border-0 shadow-sm rounded-4 h-100 hover-lift overflow-hidden">
+                    <div class="card-body p-4">
+                        <div class="d-inline-flex align-items-center justify-content-center rounded-3 mb-3"
+                             style="width: 60px; height: 60px; background: rgba(59,130,246,0.1);">
+                            <i class="bi bi-code-slash fs-3" style="color: #3b82f6;"></i>
+                        </div>
+                        <h5 class="fw-bold mb-2">On-Page SEO</h5>
+                        <p class="text-muted small mb-3">ปรับแต่ง Title, Meta Description, Header Tags, Internal Links, URL Structure และ Content Optimization</p>
+                        <div class="d-flex flex-wrap gap-1">
+                            <span class="badge rounded-pill" style="background: rgba(59,130,246,0.1); color: #3b82f6; font-size: 0.7rem;">Meta Tags</span>
+                            <span class="badge rounded-pill" style="background: rgba(59,130,246,0.1); color: #3b82f6; font-size: 0.7rem;">Schema</span>
+                            <span class="badge rounded-pill" style="background: rgba(59,130,246,0.1); color: #3b82f6; font-size: 0.7rem;">Content</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                <div class="card border-0 shadow-sm rounded-4 h-100 hover-lift overflow-hidden">
+                    <div class="card-body p-4">
+                        <div class="d-inline-flex align-items-center justify-content-center rounded-3 mb-3"
+                             style="width: 60px; height: 60px; background: rgba(6,182,212,0.1);">
+                            <i class="bi bi-link-45deg fs-3" style="color: #06b6d4;"></i>
+                        </div>
+                        <h5 class="fw-bold mb-2">Off-Page SEO</h5>
+                        <p class="text-muted small mb-3">สร้าง Backlinks คุณภาพ, Guest Posting, Social Signals, Brand Mentions และ Directory Submissions</p>
+                        <div class="d-flex flex-wrap gap-1">
+                            <span class="badge rounded-pill" style="background: rgba(6,182,212,0.1); color: #06b6d4; font-size: 0.7rem;">Backlinks</span>
+                            <span class="badge rounded-pill" style="background: rgba(6,182,212,0.1); color: #06b6d4; font-size: 0.7rem;">PR</span>
+                            <span class="badge rounded-pill" style="background: rgba(6,182,212,0.1); color: #06b6d4; font-size: 0.7rem;">Outreach</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                <div class="card border-0 shadow-sm rounded-4 h-100 hover-lift overflow-hidden">
+                    <div class="card-body p-4">
+                        <div class="d-inline-flex align-items-center justify-content-center rounded-3 mb-3"
+                             style="width: 60px; height: 60px; background: rgba(249,115,22,0.1);">
+                            <i class="bi bi-speedometer2 fs-3" style="color: #f97316;"></i>
+                        </div>
+                        <h5 class="fw-bold mb-2">Technical SEO</h5>
+                        <p class="text-muted small mb-3">ปรับปรุง Core Web Vitals, Page Speed, Mobile Friendly, Crawlability และ Site Architecture</p>
+                        <div class="d-flex flex-wrap gap-1">
+                            <span class="badge rounded-pill" style="background: rgba(249,115,22,0.1); color: #f97316; font-size: 0.7rem;">Speed</span>
+                            <span class="badge rounded-pill" style="background: rgba(249,115,22,0.1); color: #f97316; font-size: 0.7rem;">Mobile</span>
+                            <span class="badge rounded-pill" style="background: rgba(249,115,22,0.1); color: #f97316; font-size: 0.7rem;">Core Vitals</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Recent Clients -->
+{% if recent_clients %}
+<section class="py-5" style="background: #f1f5f9;">
+    <div class="container">
+        <div class="d-flex justify-content-between align-items-center mb-4" data-aos="fade-up">
+            <div>
+                <span class="section-badge mb-2"><i class="bi bi-clock-history me-1"></i> Recent</span>
+                <h3 class="fw-bold mt-2 mb-0" style="color: var(--dark);">ลูกค้าล่าสุด</h3>
+            </div>
+            <a href="/clients/" class="btn btn-primary-gradient btn-sm px-4">
+                ดูทั้งหมด <i class="bi bi-arrow-right ms-1"></i>
+            </a>
+        </div>
+        <div class="row g-3" data-aos="fade-up" data-aos-delay="100">
+            {% for client in recent_clients %}
+            <div class="col-lg-4 col-md-6">
+                <div class="card border-0 shadow-sm rounded-4 hover-lift">
+                    <div class="card-body p-4">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="rounded-3 d-flex align-items-center justify-content-center me-3"
+                                 style="width: 44px; height: 44px; background: var(--gradient-primary);">
+                                <i class="bi bi-building text-white"></i>
+                            </div>
+                            <div>
+                                <h6 class="fw-bold mb-0">{{ client.company_name }}</h6>
+                                <small class="text-muted">{{ client.website }}</small>
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="badge rounded-pill package-badge
+                                {% if client.package == 'enterprise' %}status-completed
+                                {% elif client.package == 'premium' %}status-active
+                                {% else %}status-pending{% endif %}">
+                                {{ client.get_package_display }}
+                            </span>
+                            <span class="badge rounded-pill package-badge
+                                {% if client.status == 'active' %}status-active
+                                {% elif client.status == 'completed' %}status-completed
+                                {% else %}status-pending{% endif %}">
+                                {% if client.status == 'active' %}Active
+                                {% elif client.status == 'completed' %}Completed
+                                {% else %}Pending{% endif %}
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endif %}
+
+<!-- CTA Section -->
+<section class="py-5" style="background: var(--dark);">
+    <div class="container">
+        <div class="row align-items-center" data-aos="fade-up">
+            <div class="col-lg-8 text-white">
+                <h2 class="fw-bold mb-2">พร้อมเพิ่มอันดับเว็บไซต์ของคุณ?</h2>
+                <p style="color: var(--text-light);" class="mb-0">ปรึกษาฟรี! ทีมผู้เชี่ยวชาญพร้อมวิเคราะห์เว็บไซต์ของคุณ</p>
+            </div>
+            <div class="col-lg-4 text-lg-end mt-3 mt-lg-0">
+                <a href="/clients/add/" class="btn btn-accent-gradient btn-lg px-5">
+                    <i class="bi bi-rocket-takeoff me-2"></i>เริ่มต้นเลย
                 </a>
             </div>
         </div>
-
-        <!-- Table -->
-        <div class="card-body p-0">
-            <div class="table-responsive">
-                <table class="table table-hover table-custom align-middle mb-0">
-                    <thead>
-                        <tr>
-                            <th class="text-center" style="width: 80px;">
-                                <i class="bi bi-hash me-1"></i>รหัส
-                            </th>
-                            <th><i class="bi bi-person me-1"></i>ชื่อประชากร</th>
-                            <th class="text-center"><i class="bi bi-calendar-event me-1"></i>อายุ</th>
-                            <th class="text-center" style="width: 120px;">แก้ไข</th>
-                            <th class="text-center" style="width: 120px;">ลบ</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {% for person in all_person %}
-                        <tr>
-                            <th scope="row" class="text-center fw-bold" style="color: #667eea;">{{ person.id }}</th>
-                            <td>
-                                <div class="d-flex align-items-center">
-                                    <div class="rounded-circle d-flex align-items-center justify-content-center me-3"
-                                         style="width: 38px; height: 38px; background: linear-gradient(135deg, #667eea20, #764ba220);">
-                                        <i class="bi bi-person-fill" style="color: #667eea;"></i>
-                                    </div>
-                                    <span class="fw-medium">{{ person.name }}</span>
-                                </div>
-                            </td>
-                            <td class="text-center">
-                                <span class="badge rounded-pill px-3 py-2" style="background: rgba(102,126,234,0.1); color: #667eea; font-size: 0.85rem;">
-                                    {{ person.age }} ปี
-                                </span>
-                            </td>
-                            <td class="text-center">
-                                <a href="#" class="btn btn-edit btn-sm">
-                                    <i class="bi bi-pencil-square me-1"></i>แก้ไข
-                                </a>
-                            </td>
-                            <td class="text-center">
-                                <a href="#" class="btn btn-delete btn-sm">
-                                    <i class="bi bi-trash3 me-1"></i>ลบ
-                                </a>
-                            </td>
-                        </tr>
-                        {% empty %}
-                        <tr>
-                            <td colspan="5" class="text-center py-5">
-                                <div class="py-4">
-                                    <i class="bi bi-inbox fs-1 text-muted"></i>
-                                    <p class="text-muted mt-3 mb-2 fw-medium">ยังไม่มีข้อมูลประชากรในระบบ</p>
-                                    <a href="/form" class="btn btn-sm rounded-pill px-4 text-white" style="background: var(--primary-gradient);">
-                                        <i class="bi bi-plus-circle me-1"></i> เพิ่มข้อมูลคนแรก
-                                    </a>
-                                </div>
-                            </td>
-                        </tr>
-                        {% endfor %}
-                    </tbody>
-                </table>
-            </div>
-        </div>
-
-        {% if all_person %}
-        <!-- Card Footer -->
-        <div class="card-footer bg-white border-top-0 p-3">
-            <div class="d-flex justify-content-between align-items-center px-2">
-                <span class="text-muted small">
-                    <i class="bi bi-info-circle me-1"></i>
-                    แสดงข้อมูลทั้งหมด {{ all_person|length }} รายการ
-                </span>
-                <span class="text-muted small">
-                    <i class="bi bi-clock me-1"></i> อัพเดทล่าสุด: วันนี้
-                </span>
-            </div>
-        </div>
-        {% endif %}
     </div>
+</section>
 
-</div>
 {% endblock %}

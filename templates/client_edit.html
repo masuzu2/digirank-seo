@@ -1,0 +1,122 @@
+{% extends "base.html" %}
+
+{% block title %}
+<title>แก้ไขข้อมูล {{ client.company_name }} - DigiRank SEO</title>
+{% endblock %}
+
+{% block content %}
+
+<!-- Page Header -->
+<section style="background: var(--gradient-hero); padding: 60px 0 40px; position: relative; overflow: hidden;">
+    <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; pointer-events: none;">
+        <div style="position: absolute; bottom: 0; right: 10%; width: 300px; height: 300px; background: rgba(139,92,246,0.06); border-radius: 50%; filter: blur(80px);"></div>
+    </div>
+    <div class="container position-relative">
+        <div data-aos="fade-up">
+            <span class="section-badge mb-3"><i class="bi bi-pencil-square me-1"></i> Edit Client</span>
+            <h1 class="display-5 fw-bold text-white mt-3 mb-2">แก้ไขข้อมูลลูกค้า</h1>
+            <p style="color: var(--text-light);">แก้ไขข้อมูลของ {{ client.company_name }} (รหัส #{{ client.id }})</p>
+        </div>
+    </div>
+</section>
+
+<section class="py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-7 col-md-9">
+
+                <div class="card border-0 shadow-lg rounded-4 overflow-hidden" data-aos="fade-up">
+                    <div class="card-header border-0 text-white p-4 text-center" style="background: linear-gradient(135deg, #8b5cf6, #6d28d9);">
+                        <div class="d-inline-flex align-items-center justify-content-center rounded-circle mb-3"
+                             style="width: 70px; height: 70px; background: rgba(255,255,255,0.2);">
+                            <i class="bi bi-pencil-square fs-2"></i>
+                        </div>
+                        <h4 class="mb-1 fw-bold">แก้ไขข้อมูลลูกค้า</h4>
+                        <p class="mb-0 small" style="opacity: 0.8;">{{ client.company_name }}</p>
+                    </div>
+
+                    <div class="card-body p-4 p-md-5">
+                        <form method="post" action="/clients/edit/{{ client.id }}/">
+                            {% csrf_token %}
+
+                            <div class="mb-4">
+                                <label class="form-label fw-medium">
+                                    <i class="bi bi-building me-1" style="color: #3b82f6;"></i> ชื่อบริษัท
+                                </label>
+                                <input type="text" class="form-control rounded-3 py-3 px-4" name="company_name"
+                                       value="{{ client.company_name }}" required>
+                            </div>
+
+                            <div class="mb-4">
+                                <label class="form-label fw-medium">
+                                    <i class="bi bi-globe me-1" style="color: #06b6d4;"></i> เว็บไซต์
+                                </label>
+                                <input type="text" class="form-control rounded-3 py-3 px-4" name="website"
+                                       value="{{ client.website }}" required>
+                            </div>
+
+                            <div class="row g-3 mb-4">
+                                <div class="col-md-6">
+                                    <label class="form-label fw-medium">
+                                        <i class="bi bi-box me-1" style="color: #8b5cf6;"></i> แพ็คเกจ SEO
+                                    </label>
+                                    <select class="form-select rounded-3 py-3 px-4" name="package" required>
+                                        <option value="basic" {% if client.package == 'basic' %}selected{% endif %}>Basic SEO - เริ่มต้น</option>
+                                        <option value="standard" {% if client.package == 'standard' %}selected{% endif %}>Standard SEO - มาตรฐาน</option>
+                                        <option value="premium" {% if client.package == 'premium' %}selected{% endif %}>Premium SEO - พรีเมียม</option>
+                                        <option value="enterprise" {% if client.package == 'enterprise' %}selected{% endif %}>Enterprise SEO - องค์กร</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label fw-medium">
+                                        <i class="bi bi-cash me-1" style="color: #10b981;"></i> งบประมาณ (บาท)
+                                    </label>
+                                    <input type="number" class="form-control rounded-3 py-3 px-4" name="budget"
+                                           value="{{ client.budget }}" required min="0">
+                                </div>
+                            </div>
+
+                            <div class="mb-4">
+                                <label class="form-label fw-medium">
+                                    <i class="bi bi-flag me-1" style="color: #f97316;"></i> สถานะ
+                                </label>
+                                <select class="form-select rounded-3 py-3 px-4" name="status" required>
+                                    <option value="pending" {% if client.status == 'pending' %}selected{% endif %}>Pending - รอดำเนินการ</option>
+                                    <option value="active" {% if client.status == 'active' %}selected{% endif %}>Active - กำลังดำเนินการ</option>
+                                    <option value="completed" {% if client.status == 'completed' %}selected{% endif %}>Completed - เสร็จสิ้น</option>
+                                </select>
+                            </div>
+
+                            <!-- Info -->
+                            <div class="alert rounded-3 border-0 p-3 mb-4" style="background: rgba(59,130,246,0.06);">
+                                <div class="d-flex align-items-center">
+                                    <i class="bi bi-calendar3 me-2" style="color: #3b82f6;"></i>
+                                    <span class="small text-muted">วันที่เพิ่มข้อมูล: <strong>{{ client.date }}</strong></span>
+                                </div>
+                            </div>
+
+                            <div class="d-flex gap-3 mt-5">
+                                <button type="submit" class="btn btn-lg flex-fill rounded-pill text-white fw-bold shadow"
+                                        style="background: linear-gradient(135deg, #8b5cf6, #6d28d9); padding: 12px;">
+                                    <i class="bi bi-check2-circle me-2"></i>บันทึกการแก้ไข
+                                </button>
+                                <a href="/clients/" class="btn btn-outline-secondary btn-lg rounded-pill px-4" style="padding: 12px;">
+                                    <i class="bi bi-x-circle me-1"></i> ยกเลิก
+                                </a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="text-center mt-4">
+                    <a href="/clients/" class="text-muted text-decoration-none">
+                        <i class="bi bi-arrow-left me-1"></i> กลับไปหน้าจัดการลูกค้า
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

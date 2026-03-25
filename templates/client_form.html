@@ -1,0 +1,113 @@
+{% extends "base.html" %}
+
+{% block title %}
+<title>เพิ่มลูกค้าใหม่ - DigiRank SEO</title>
+{% endblock %}
+
+{% block content %}
+
+<!-- Page Header -->
+<section style="background: var(--gradient-hero); padding: 60px 0 40px; position: relative; overflow: hidden;">
+    <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; pointer-events: none;">
+        <div style="position: absolute; bottom: 0; left: 10%; width: 300px; height: 300px; background: rgba(249,115,22,0.06); border-radius: 50%; filter: blur(80px);"></div>
+    </div>
+    <div class="container position-relative">
+        <div data-aos="fade-up">
+            <span class="section-badge mb-3"><i class="bi bi-person-plus me-1"></i> New Client</span>
+            <h1 class="display-5 fw-bold text-white mt-3 mb-2">เพิ่มลูกค้าใหม่</h1>
+            <p style="color: var(--text-light);">กรอกข้อมูลลูกค้า SEO เพื่อเริ่มต้นโปรเจค</p>
+        </div>
+    </div>
+</section>
+
+<section class="py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-7 col-md-9">
+
+                <div class="card border-0 shadow-lg rounded-4 overflow-hidden" data-aos="fade-up">
+                    <div class="card-header border-0 text-white p-4 text-center" style="background: var(--gradient-primary);">
+                        <div class="d-inline-flex align-items-center justify-content-center rounded-circle mb-3"
+                             style="width: 70px; height: 70px; background: rgba(255,255,255,0.2);">
+                            <i class="bi bi-person-plus-fill fs-2"></i>
+                        </div>
+                        <h4 class="mb-1 fw-bold">แบบฟอร์มเพิ่มลูกค้า SEO</h4>
+                        <p class="mb-0 small" style="opacity: 0.8;">กรุณากรอกข้อมูลให้ครบถ้วน</p>
+                    </div>
+
+                    <div class="card-body p-4 p-md-5">
+                        <form method="post" action="/clients/add/">
+                            {% csrf_token %}
+
+                            <div class="mb-4">
+                                <label class="form-label fw-medium">
+                                    <i class="bi bi-building me-1" style="color: #3b82f6;"></i> ชื่อบริษัท
+                                </label>
+                                <input type="text" class="form-control rounded-3 py-3 px-4" name="company_name"
+                                       placeholder="เช่น บริษัท ABC จำกัด" required>
+                            </div>
+
+                            <div class="mb-4">
+                                <label class="form-label fw-medium">
+                                    <i class="bi bi-globe me-1" style="color: #06b6d4;"></i> เว็บไซต์
+                                </label>
+                                <input type="text" class="form-control rounded-3 py-3 px-4" name="website"
+                                       placeholder="เช่น www.example.com" required>
+                            </div>
+
+                            <div class="row g-3 mb-4">
+                                <div class="col-md-6">
+                                    <label class="form-label fw-medium">
+                                        <i class="bi bi-box me-1" style="color: #8b5cf6;"></i> แพ็คเกจ SEO
+                                    </label>
+                                    <select class="form-select rounded-3 py-3 px-4" name="package" required>
+                                        <option value="basic">Basic SEO - เริ่มต้น</option>
+                                        <option value="standard">Standard SEO - มาตรฐาน</option>
+                                        <option value="premium">Premium SEO - พรีเมียม</option>
+                                        <option value="enterprise">Enterprise SEO - องค์กร</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label fw-medium">
+                                        <i class="bi bi-cash me-1" style="color: #10b981;"></i> งบประมาณ (บาท)
+                                    </label>
+                                    <input type="number" class="form-control rounded-3 py-3 px-4" name="budget"
+                                           placeholder="เช่น 15000" required min="0">
+                                </div>
+                            </div>
+
+                            <div class="mb-4">
+                                <label class="form-label fw-medium">
+                                    <i class="bi bi-flag me-1" style="color: #f97316;"></i> สถานะ
+                                </label>
+                                <select class="form-select rounded-3 py-3 px-4" name="status" required>
+                                    <option value="pending">Pending - รอดำเนินการ</option>
+                                    <option value="active">Active - กำลังดำเนินการ</option>
+                                    <option value="completed">Completed - เสร็จสิ้น</option>
+                                </select>
+                            </div>
+
+                            <div class="d-flex gap-3 mt-5">
+                                <button type="submit" class="btn btn-primary-gradient btn-lg flex-fill">
+                                    <i class="bi bi-check2-circle me-2"></i>บันทึกข้อมูล
+                                </button>
+                                <a href="/clients/" class="btn btn-outline-secondary btn-lg rounded-pill px-4">
+                                    <i class="bi bi-x-circle me-1"></i> ยกเลิก
+                                </a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="text-center mt-4">
+                    <a href="/clients/" class="text-muted text-decoration-none">
+                        <i class="bi bi-arrow-left me-1"></i> กลับไปหน้าจัดการลูกค้า
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
