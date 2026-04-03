@@ -115,24 +115,31 @@ python manage.py runserver
 
 ### หน้าแรก (Landing Page)
 ![หน้าแรก](screenshots/home.png)
+<img width="1692" height="899" alt="Screenshot 2569-04-03 at 15 01 54" src="https://github.com/user-attachments/assets/f3589134-8d22-4c38-b22d-b5c519762b02" />
 
 ### หน้าบริการ + แพ็คเกจ
 ![บริการ](screenshots/services.png)
+<img width="1692" height="899" alt="Screenshot 2569-04-03 at 15 02 17" src="https://github.com/user-attachments/assets/4e9b3c73-2cd2-4cc3-bcdd-e304c289e01e" />
 
 ### หน้าจัดการลูกค้า (CRUD + ค้นหา)
 ![ลูกค้า](screenshots/clients.png)
+<img width="1692" height="899" alt="Screenshot 2569-04-03 at 15 02 35" src="https://github.com/user-attachments/assets/c2d9c755-430c-41aa-a5c7-731c35c61b65" />
 
 ### ฟอร์มเพิ่ม/แก้ไขลูกค้า
 ![ฟอร์ม](screenshots/form.png)
+<img width="1692" height="899" alt="Screenshot 2569-04-03 at 15 02 50" src="https://github.com/user-attachments/assets/2af0813e-a275-4ae4-8310-704e4b51d6a1" />
 
 ### Modal ยืนยันการลบ
 ![ลบ](screenshots/delete.png)
+<img width="1692" height="899" alt="Screenshot 2569-04-03 at 15 03 20" src="https://github.com/user-attachments/assets/d548bf0f-f25a-498a-bf1c-b9a5e507cc0e" />
 
 ### หน้าเกี่ยวกับเรา
 ![เกี่ยวกับ](screenshots/about.png)
+<img width="1692" height="899" alt="Screenshot 2569-04-03 at 15 03 33" src="https://github.com/user-attachments/assets/9a7c75b2-641d-4566-9ef9-7fe36c1e05b1" />
 
 ### หน้าติดต่อ
 ![ติดต่อ](screenshots/contact.png)
+<img width="1692" height="899" alt="Screenshot 2569-04-03 at 15 03 45" src="https://github.com/user-attachments/assets/3b3f07d1-e64e-4bc5-9079-7b5cc0e20652" />
 
 ---
 
